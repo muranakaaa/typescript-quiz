@@ -1,12 +1,11 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function ResultPage() {
+function ResultContent() {
   const searchParams = useSearchParams();
-  // クエリパラメータからcorrect_rateを取得
   const correctRate = parseFloat(searchParams.get("correct_rate") || "0").toFixed(2);
-
   const router = useRouter();
 
   const retryQuiz = () => {
@@ -24,5 +23,13 @@ export default function ResultPage() {
         もう一度挑戦する
       </button>
     </div>
+  );
+}
+
+export default function ResultPage() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <ResultContent />
+    </Suspense>
   );
 }
