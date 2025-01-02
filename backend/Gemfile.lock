@@ -85,6 +85,8 @@ GEM
     connection_pool (2.4.1)
     crass (1.0.6)
     date (3.4.1)
+    dockerfile-rails (1.6.25)
+      rails (>= 3.0.0)
     drb (2.2.1)
     erubi (1.13.1)
     globalid (1.2.1)
@@ -234,7 +236,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.7.1)
+    zeitwerk (2.6.18)
 
 PLATFORMS
   aarch64-linux-gnu
@@ -249,6 +251,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  dockerfile-rails (>= 1.6)
   nokogiri (~> 1.14)
   pg (~> 1.1)
   puma (>= 5.0)
